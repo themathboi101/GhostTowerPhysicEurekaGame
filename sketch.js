@@ -12,12 +12,16 @@ var PLAY=1;
 var END=0;
 var gameState=PLAY;
 
+var spookyWave;
+
 
 function preload(){
      ghostImage=loadAnimation("ghost-jumping.png","ghost-standing.png");
   doorImage=loadImage("door.png");
   climberImage=loadImage("climber.png");
   towerImg=loadImage("tower.png");
+  
+  spookyWave=loadSound("spooky.wav");
 }
 function setup(){
      createCanvas(600,700);
@@ -45,7 +49,7 @@ function draw(){
   
   if(gameState===PLAY){
     
-    
+    spookyWave.play();
     tower.velocityY=4;
     
     if(tower.y>400){
@@ -77,7 +81,7 @@ function draw(){
 fill (255,255,255);
     textSize(20); 
     
-    text("Game Over. Try again using the reset function yeet", 120,100);
+    text("Game Over. Try again using the refresh button yeet", 120,100);
     tower.destroy();
     climberG.destroyEach();
     invisibleDetectionG.destroyEach();
