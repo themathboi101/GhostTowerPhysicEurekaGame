@@ -36,7 +36,7 @@ function setup(){
   invisibleBoundary=createSprite(300,650,700,30);
   invisibleBoundary.visible=false;
   
-  ghost.debug=true;
+  //ghost.debug=true;
   
   invisibleDetectionG=createGroup();
   doorG=createGroup();
